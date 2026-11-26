@@ -21,7 +21,7 @@
         return response.text();
       })
       .then((text) => {
-        const match = text.match(/^\s*url:\s*(\S+)/m);
+        const match = text.match(/^\s*(?:-\s*)?url:\s*(\S+)/m);
         if (!match) throw new Error("URL de download não encontrada");
         location.replace(base + match[1]);
       })
